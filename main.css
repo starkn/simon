@@ -1,25 +1,29 @@
 body {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 	height: 100vh;
-    margin: 0;
-	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	min-width: 20em;
 }
 
 header {
-    display: flex;
-    flex-direction: row;
+	display: flex;
+	flex-direction: row;
 	padding: 0em 1em;
 	background-color: #484848;
 	color: white;
 }
 
 main {
-    display: flex;
+	display: flex;
 	flex-grow: 1;
-    flex-direction: column;
-    background-color: bisque;
+	flex-direction: column;
+	flex-wrap: wrap;
+	background-color: peachpuff;
 	padding: 1em;
+	align-content: center;
+	text-align: center;
 }
 
 footer {
@@ -33,17 +37,52 @@ footer a {
 }
 
 ul {
-    display: flex;
-    list-style-type: none;
+	display: flex;
+	list-style-type: none;
 }
 
 li {
-    margin: 1em;
+	margin: 1em;
 }
 
 a {
 	text-decoration: none;
 	color: gray
+}
+
+table,
+th,
+td {
+	border: 1px solid;
+}
+
+#buttons button {
+	background: none;
+	border: none;
+}
+
+img:hover {
+	opacity: 50%;
+	cursor: pointer;
+}
+
+#buttons {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.skware {
+	flex-basis: 100%;
+}
+
+.triangul {}
+
+.stahr {}
+
+.yinying {
+	flex-basis: 100%;
 }
 
 .gr {
