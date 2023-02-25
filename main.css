@@ -1,21 +1,36 @@
 body {
     display: flex;
     flex-direction: column;
+	height: 100vh;
     margin: 0;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
     display: flex;
     flex-direction: row;
+	padding: 0em 1em;
+	background-color: #484848;
+	color: white;
 }
 
 main {
     display: flex;
+	flex-grow: 1;
     flex-direction: column;
     background-color: bisque;
+	padding: 1em;
 }
 
-footer {}
+footer {
+	display: flex;
+	justify-content: space-between;
+	padding: .5em 1em;
+}
+
+footer a {
+	text-decoration: underline;
+}
 
 ul {
     display: flex;
@@ -24,4 +39,41 @@ ul {
 
 li {
     margin: 1em;
+}
+
+a {
+	text-decoration: none;
+	color: gray
+}
+
+.gr {
+	color: #67e767;
+}
+
+.gr:hover {
+	color: #add5ad;
+}
+
+.rd {
+	color: #e76767;
+}
+
+.rd:hover {
+	color: #d7a7a7;
+}
+
+.bl {
+	color: #8296fa
+}
+
+.bl:hover {
+	color: #c3cdff
+}
+
+.pk {
+	color: #d50bd5;
+}
+
+.pk:hover {
+	color: #f5a5f5;
 }
