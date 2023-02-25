@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    background-color: bisque;
+}
+
+footer {}
+
+ul {
+    display: flex;
+    list-style-type: none;
+}
+
+li {
+    margin: 1em;
+}
