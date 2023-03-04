@@ -36,6 +36,11 @@ footer a {
 	text-decoration: underline;
 }
 
+th,
+td {
+	padding: 0.2em 0.4em;
+}
+
 ul {
 	display: flex;
 	list-style-type: none;
