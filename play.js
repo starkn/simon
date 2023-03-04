@@ -10,9 +10,23 @@ class Button {
 		this.el.children[0].style.filter = level;
 	}
 
-	async press(volume) {
-		this.paint("invert(100%)");
+	async press() {
+		this.on();
+		await delay(300);
+		this.off();
+	}
+
+	async highlight() {
+		this.on()
 		await delay(500);
+		this.off();
+	}
+
+	async on()  {
+		this.paint("invert(100%)");
+	}
+
+	async off() {
 		this.paint("invert(0%)");
 	}
 }
@@ -41,7 +55,7 @@ class Game {
 	async pressButton(button) {
 		if (this.allowPlayer) {
 			this.allowPlayer = false;
-			await this.buttons.get(button.id).press(1.0);
+			await this.buttons.get(button.id).press();
 
 			if (this.sequence[this.playerPlaybackPos].el.id === button.id) {
 				this.playerPlaybackPos++;
@@ -54,7 +68,24 @@ class Game {
 				this.allowPlayer = true;
 			} else {
 				this.saveScore(this.sequence.length - 1);
-				await this.buttonDance(2);
+				await delay(100);
+				this.buttons.forEach((button) => {
+					button.on()
+				})
+				await delay(500);
+				this.buttons.forEach((button) => {
+					button.off()
+				})
+				await delay(500);
+				this.buttons.forEach((button) => {
+					button.on()
+				})
+				await delay(500);
+				this.buttons.forEach((button) => {
+					button.off()
+				})
+				await delay(500);
+				await this.buttonDance(1);
 			}
 		}
 	}
@@ -77,7 +108,7 @@ class Game {
 	async playSequence() {
 		await delay(500);
 		for (const btn of this.sequence) {
-			await btn.press(1.0);
+			await btn.highlight();
 			await delay(100);
 		}
 	}
@@ -95,7 +126,7 @@ class Game {
 	async buttonDance(laps = 1) {
 		for (let step = 0; step < laps; step++) {
 			for (const btn of this.buttons.values()) {
-				await btn.press(0.0);
+				await btn.highlight();
 			}
 		}
 	}
