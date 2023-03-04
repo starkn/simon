@@ -6,6 +6,7 @@
     <title>Game</title>
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="main.css" />
+    <script src="play.js"></script>
 </head>
 
 <body>
@@ -23,32 +24,32 @@
     </header>
 
     <main>
-        <div id="player">
+        <div>
             Player:
-            <span>Player Name Goes Here</span>
+            <span id="player"></span>
         </div>
 
-        <div id="score">
+        <div>
             Score:
-            <span>Score goes here</span>
+            <span id="score"></span>
         </div>
 
         <div id="reset">
-            <button>Reset</button>
+            <button onclick="game.reset()">Reset</button>
         </div>
 
         <div id="buttons">
-            <button class="skware">
-                <img src="skware.svg" height="50" />
+            <button id="skware" class="game-button" onclick="game.pressButton(this)">
+                <img src="skware.svg" height="80" />
             </button>
-            <button class="triangul">
-                <img src="triangul.svg" height="50" />
+            <button id="triangul" class="game-button" onclick="game.pressButton(this)">
+                <img src="triangul.svg" height="80" />
             </button>
-            <button class="stahr">
-                <img src="stahr.svg" height="50" />
+            <button id="stahr" class="game-button" onclick="game.pressButton(this)">
+                <img src="stahr.svg" height="80" />
             </button>
-            <button class="yinying">
-                <img src="yinying.svg" height="50" />
+            <button id="yinying" class="game-button" onclick="game.pressButton(this)">
+                <img src="yinying.svg" height="80" />
             </button>
         </div>
     </main>
